@@ -26,7 +26,7 @@ export default function Header() {
     ]
 
     return (
-        <header className="p-5">
+        <header className="p-5 border-b border-sky-500 mb-10">
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
                 <div>
                     <a href="/" className="font-bold  text-secondary text-2xl font-secondary">

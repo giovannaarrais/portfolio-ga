@@ -12,6 +12,7 @@ export const personalInfos = pgTable("personal_infos", {
     fullName: text('full_name').notNull(),
     jobTitle: text('job_title').notNull(),
     bio: varchar('description', {length: 700}),
+    aboutMe: varchar('about_me', {length: 1000}),
     profileImage: text('profile_image'),
     location: text(),
     emailPublic: text('email_public'),
