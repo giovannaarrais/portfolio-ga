@@ -24,9 +24,6 @@ const Stacks = async() => {
     const outros = stacks.filter((stack) => stack.category === "Outros")
 
 
-
-
-
     return (
         <section>
             <Container>

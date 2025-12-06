@@ -1,4 +1,3 @@
-import React from 'react';
 
 import {
     Card,
@@ -8,6 +7,8 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { Progress } from '@/components/ui/progress';
+import DynamicIcon from "../../DynamicIcon/component";
+import Image from "next/image";
 
 type LevelProps = "basico" | "medio" | "intermediario" | "avancado" | null;
 
@@ -22,19 +23,13 @@ interface CardStackProps {
 const CardStack = ({stackId, stackIcon, stackImageIcon, stackName, stackLevel}:CardStackProps) => {
 
     let nameLevel = ''
-    let colorFrom = ''
-    let colorTo = ''
     const progressForLevel = (level: LevelProps) => {
         switch (level){
             case 'basico':
                 nameLevel = 'Básico'
-                colorFrom = 'from-blue-500'
-                colorTo = 'to-purple-600'
                 return 30;
             case 'medio':
                 nameLevel = 'Médio'
-                colorFrom = 'from-blue-500'
-                colorTo = 'to-purple-600'
                 return 50;
             case 'intermediario':
                 nameLevel = 'Intermediário'
@@ -46,24 +41,44 @@ const CardStack = ({stackId, stackIcon, stackImageIcon, stackName, stackLevel}:C
                 return 0
         }
     }
-    return (
-        <Card className="w-full max-w-sm flex flex-row gap-3 mb-3">
-            <CardHeader>
-                <span className="p-2 rounded-md bg-gray-400/25">{stackIcon || stackImageIcon}</span>
-            </CardHeader>
 
-            <CardContent className='w-full'>
-            <CardTitle className="mb-2">{stackName}</CardTitle>
-            <CardDescription className='gap-2'>
-                <div className='flex  items-center gap-2'>
-                    <Progress value={progressForLevel(stackLevel as LevelProps)} 
-                        className={`
-                        [&>div]:bg-gradient-to-r 
-                        [&>div]:${colorFrom} 
-                        [&>div]:${colorTo}`}/>
-                    {nameLevel}
-                </div>
-            </CardDescription>
+    console.log(stackImageIcon)
+
+
+    return (
+        <Card className="mb-3">
+            <CardContent className=' flex gap-2 px-3'>
+            <div className="flex-auto max-w-[50px] min-w-[50px] flex justify-center bg-gray-600/25 items-center rounded-md">
+                {stackImageIcon !== null ? (
+                    <Image
+                        src={stackImageIcon}
+                        alt={stackName}
+                        sizes="100vw"
+                        width={0}
+                        height={0}
+                        className="h-auto w-auto max-h-[30px] "
+                    />
+                ): (
+                    <DynamicIcon iconName={stackIcon}/>
+                )}
+            </div>
+            <div className="flex-auto">
+                <CardTitle className="mb-2">{stackName}</CardTitle>
+                <CardDescription className='gap-2'>
+                    <div className='flex  items-center gap-2'>
+                        <Progress value={progressForLevel(stackLevel as LevelProps)} 
+                            className={`
+                            [&>div]:bg-gradient-to-r 
+                            bg-gray-500/25
+                            ${stackLevel === "basico" && "[&>div]:from-green-400 [&>div]:to-green-800"}
+                            ${stackLevel === "medio" && "[&>div]:from-purple-400 [&>div]:to-purple-800"}
+                            ${stackLevel === "intermediario" && "[&>div]:from-orange-400 [&>div]:to-orange-800"}
+                            ${stackLevel === "avancado" && "[&>div]:from-red-400 [&>div]:to-red-800"}
+                            `}/>
+                        {nameLevel}
+                    </div>
+                </CardDescription>
+            </div>
             </CardContent>
         </Card>
     );
