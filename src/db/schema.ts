@@ -34,7 +34,8 @@ export const categoryOptions = pgEnum('category_options', ['Front-End', 'Back-En
 export const technologies = pgTable("technologies", {
     id: uuid().defaultRandom().primaryKey(),
     name: text().notNull(),
-    icon: text().notNull(),
+    icon: text().default('Code'),
+    ImageIcon: text('image_icon'),
     level: levelOptions(),
     category: categoryOptions(),
     isActive: boolean('is_active').default(true).notNull(),

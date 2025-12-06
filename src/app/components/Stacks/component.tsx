@@ -10,6 +10,9 @@ import {
     CardTitle,
 } from "@/components/ui/card"
 import { Progress } from "@/components/ui/progress"
+import HeaderStack from './components/headerStack';
+import CardStack from './components/cardStack';
+
 
 const Stacks = async() => {
 
@@ -19,6 +22,10 @@ const Stacks = async() => {
     const stacksBack = stacks.filter((stack) => stack.category === "Back-End")
     const ferramentas = stacks.filter((stack) => stack.category === "Ferramentas")
     const outros = stacks.filter((stack) => stack.category === "Outros")
+
+
+
+
 
     return (
         <section>
@@ -34,64 +41,88 @@ const Stacks = async() => {
                 </div>
 
                 <div className="flex justify-center gap-5">
-                    {stacksFront  && (
+                    {stacksFront.length > 0  && (
                         <div className='flex-auto'>
-                            <div className='flex gap-2 items-center mb-7'>
-                                <span className='bg-gradient-primary text-black p-3 rounded-md'><Code2 size={25}/></span>
-                                <h1 className='text-2xl font-bold'>Front-End</h1>
-                            </div>
+                            <HeaderStack name="Front-End" >
+                                <Code size={25}/>
+                            </HeaderStack>
                             {stacksFront.map((stack) => (
                                 stack.isActive && (
-                                    <Card className="w-full max-w-sm flex flex-row gap-3 mb-3" key={stack.id}>
-                                        <CardHeader>
-                                            <span className="p-2 rounded-md bg-gray-400/25"><Code /></span>
-                                        </CardHeader>
-
-                                        <CardContent className='w-full'>
-                                        <CardTitle className="mb-2">{stack.name}</CardTitle>
-                                        <CardDescription className='gap-2'>
-                                            <div className='flex  items-center gap-2'>
-                                                <Progress value={33} />
-                                                {stack.level}
-                                            </div>
-                                        </CardDescription>
-                                        </CardContent>
-                                    </Card>
+                                    <CardStack 
+                                        key={stack.id}
+                                        stackId={stack.id}
+                                        stackIcon={stack.icon}
+                                        stackImageIcon={stack.ImageIcon}
+                                        stackName={stack.name}
+                                        stackLevel={stack.level}
+                                    />
                                 )
                             ))}
                         </div>
                     )}
-                    {stacksBack  && (
+                    {stacksBack.length > 0  && (
                         <div className='flex-auto'>
-                            <div className='flex gap-2 items-center mb-7'>
-                                <span className='bg-gradient-primary text-black p-3 rounded-md'><Database size={25}/></span>
-                                <h1 className='text-2xl font-bold'>Back-End</h1>
-                            </div>
+                            <HeaderStack name="Back-End" >
+                                <Database size={25}/>
+                            </HeaderStack>
                             <div>
-
+                            {stacksBack.map((stack) => (
+                                stack.isActive && (
+                                    <CardStack 
+                                    key={stack.id}
+                                    stackId={stack.id}
+                                    stackIcon={stack.icon}
+                                    stackImageIcon={stack.ImageIcon}
+                                    stackName={stack.name}
+                                    stackLevel={stack.level}
+                                />
+                                )
+                            ))}
                             </div>
                         </div>
                     )}
                     {(ferramentas || outros)  && (
                         <div className='flex-auto flex flex-col gap-10'>
-                            {ferramentas && (
+                            {ferramentas.length > 0 && (
                                 <div>
-                                    <div className='flex gap-2 items-center mb-7'>
-                                        <span className='bg-gradient-primary text-black p-3 rounded-md'><Wrench  size={25}/></span>
-                                        <h1 className='text-2xl font-bold'>Ferramentas</h1>
-                                    </div>
+                                    <HeaderStack name="Ferramentas" >
+                                        <Wrench  size={25}/>
+                                    </HeaderStack>
                                     <div>
+                                    {ferramentas.map((stack) => (
+                                        stack.isActive && (
+                                            <CardStack 
+                                                key={stack.id}
+                                                stackId={stack.id}
+                                                stackIcon={stack.icon}
+                                                stackImageIcon={stack.ImageIcon}
+                                                stackName={stack.name}
+                                                stackLevel={stack.level}
+                                            />
+                                        )
+                                    ))}
 
                                     </div>
                                 </div>
                             )}
-                            {outros && (
+                            {outros.length > 0 && (
                                 <div>
-                                    <div className='flex gap-2 items-center mb-7'>
-                                        <span className='bg-gradient-primary text-black p-3 rounded-md'><Ellipsis size={25}/></span>
-                                        <h1 className='text-2xl font-bold'>Outros</h1>
-                                    </div>
+                                    <HeaderStack name="Outros" >
+                                        <Ellipsis  size={25}/>
+                                    </HeaderStack>
                                     <div>
+                                    {outros.map((stack) => (
+                                        stack.isActive && (
+                                            <CardStack 
+                                                key={stack.id}
+                                                stackId={stack.id}
+                                                stackIcon={stack.icon}
+                                                stackImageIcon={stack.ImageIcon}
+                                                stackName={stack.name}
+                                                stackLevel={stack.level}
+                                            />
+                                        )
+                                    ))}
                                         
                                     </div>
                                 </div>
@@ -99,8 +130,6 @@ const Stacks = async() => {
                             
                         </div>
                     )}
-
-
                 </div>
             </Container>
         </section>
