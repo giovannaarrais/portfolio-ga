@@ -14,6 +14,8 @@ import {
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
+import { ProjectsAndTechonologies } from '@/data/ProjectsAndTechonologies/get';
+import { StacksEFerramentas, StacksEFerramentasById } from '@/data/Stacks/get';
 
 interface CardProjectProps {
     id: string;
@@ -26,7 +28,17 @@ interface CardProjectProps {
     createdAt: Date;
 }
 
-const CardProject = ({id, description, isActive, title, urlImage, urlSite, urlGithub, createdAt}: CardProjectProps) => {
+const CardProject = async({id, description, isActive, title, urlImage, urlSite, urlGithub, createdAt}: CardProjectProps) => {
+
+    
+    const projectsTechonologies = await ProjectsAndTechonologies(id);
+    const techIdsOfProject = projectsTechonologies.map(pt => pt.techId);
+
+    const stacks = await StacksEFerramentas()
+
+    const stacksOfProject = stacks.filter(stack => techIdsOfProject.includes(stack.id))
+
+
     return (
         <Card className='hover:shadow-sky-500/25 shadow-lg transition-all hover:scale-101 pt-0'>
             <CardHeader className='p-0'>
@@ -47,7 +59,9 @@ const CardProject = ({id, description, isActive, title, urlImage, urlSite, urlGi
                         {description}
                     </CardDescription>
                 )}
-                <Badge variant="outline" className='p-1 px-3 border-sky-400/50 text-sky-500 bg-gray-700/50'>React</Badge>
+                {stacksOfProject.map((stack) => (
+                    <Badge key={stack.id} variant="outline" className='p-1 px-3 mr-2 border-sky-400/50 text-sky-500 bg-gray-700/50'>{stack.name}</Badge>
+                ))}
             </CardContent>
 
             <CardFooter className='grid grid-cols-2 gap-3'>

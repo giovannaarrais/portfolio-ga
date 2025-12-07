@@ -1,7 +1,8 @@
-import { FolderTree } from "lucide-react";
+import { FolderTree, Github } from "lucide-react";
 import Container from "../Container/container";
 import { ProjectsCompleted } from "@/data/Projects/get";
 import CardProject from "./components/cardProject";
+import Link from "next/link";
 
 
 const Projects = async() => {
@@ -20,23 +21,33 @@ const Projects = async() => {
                     Desenvolvidos com dedicação e atenção aos detalhes
                     </p>
                 </div>
-                <div className="grid grid-cols-2 gap-9">
+                <div className="grid grid-cols-2 gap-9 mb-10">
                     {projects.length > 0 && (
                         projects.map((project) => (
-                            <CardProject
-                                key={project.id}
-                                id={project.id}
-                                description={project.description}
-                                isActive={project.isActive}
-                                title={project.title}
-                                urlImage={project.image}
-                                urlSite={project.urlSite}
-                                urlGithub={project.urlGithub}
-                                createdAt={project.createdAt}
-                                
-                            />
+                            project.isActive && (
+                                <CardProject
+                                    key={project.id}
+                                    id={project.id}
+                                    description={project.description}
+                                    isActive={project.isActive}
+                                    title={project.title}
+                                    urlImage={project.image}
+                                    urlSite={project.urlSite}
+                                    urlGithub={project.urlGithub}
+                                    createdAt={project.createdAt}
+                                    
+                                />
+                            )
                         ))
                     )}
+                </div>
+
+                <div>
+                    <Link href="https://github.com/giovannaarrais" target='_blank' 
+                    className='text-sm w-max px-5 py-3 mx-auto flex items-center gap-2 text-center justify-center border p-2 border-sky-500/50 hover:bg-sky-600/50 transition-all shadow-sky-400/20 shadow-lg rounded-full'>
+                        Ver mais no 
+                        <Github size={18}/> 
+                    </Link>
                 </div>
 
             </Container>

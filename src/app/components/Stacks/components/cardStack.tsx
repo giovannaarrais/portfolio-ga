@@ -42,8 +42,6 @@ const CardStack = ({stackId, stackIcon, stackImageIcon, stackName, stackLevel}:C
         }
     }
 
-    console.log(stackImageIcon)
-
 
     return (
         <Card className="mb-4 hover:border-sky-400 hover:shadow-sky-500/25 shadow-lg transition-all hover:scale-101">
