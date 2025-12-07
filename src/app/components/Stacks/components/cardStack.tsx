@@ -46,8 +46,8 @@ const CardStack = ({stackId, stackIcon, stackImageIcon, stackName, stackLevel}:C
 
 
     return (
-        <Card className="mb-3">
-            <CardContent className=' flex gap-2 px-3'>
+        <Card className="mb-4 hover:border-sky-400 hover:shadow-sky-500/25 shadow-lg transition-all hover:scale-101">
+            <CardContent className=' flex gap-4 px-3'>
             <div className="flex-auto max-w-[50px] min-w-[50px] flex justify-center bg-gray-600/25 items-center rounded-md">
                 {stackImageIcon !== null ? (
                     <Image
@@ -56,7 +56,7 @@ const CardStack = ({stackId, stackIcon, stackImageIcon, stackName, stackLevel}:C
                         sizes="100vw"
                         width={0}
                         height={0}
-                        className="h-auto w-auto max-h-[30px] "
+                        className="h-auto w-auto max-h-[27px] "
                     />
                 ): (
                     <DynamicIcon iconName={stackIcon}/>

@@ -17,7 +17,7 @@ export default function Header() {
         },
         {
             label: 'Projetos',
-            href: 'projetos'
+            href: '#projetos'
         },
         {
             label: 'Contato',

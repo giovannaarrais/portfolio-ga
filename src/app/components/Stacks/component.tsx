@@ -27,13 +27,13 @@ const Stacks = async() => {
     return (
         <section>
             <Container>
-                <div className="text-center">
+                <div className="text-center mb-20">
                     <h5 className="text-primary font-secondary flex gap-2 justify-center items-center mb-5"> <Code size={18}/> Tecnologias</h5>
                     <h1 className='text-5xl font-semibold max-w-4xl mx-auto'>
                         Skills & <span className='text-gradient-primary'>Ferramentas</span>
                     </h1>
                     <p className="text-muted-foreground mt-4 text-md">
-                        Tecnologias e ferramentas que utilizo no dia a dia
+                        Tecnologias que utilizo para criar experiências web modernas e responsivas
                     </p>
                 </div>
 

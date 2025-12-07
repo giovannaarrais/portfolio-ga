@@ -4,6 +4,7 @@ import { SocialLinks } from '@/data/Social/get';
 import {  ArrowRight } from 'lucide-react';
 import * as Icons from "lucide-react"
 import Container from '../Container/container';
+import DynamicIcon from '../DynamicIcon/component';
 
 export const lucideMap = {
     Github: Icons.Github,
@@ -51,7 +52,7 @@ const Apresentacao = async () => {
                 <div className='gap-4 flex justify-center'>
                     {social.map((link) => (
                         <a href={link.url} key={`link-${link.id}`} target='_blank'>
-                            {link.platform}
+                            <DynamicIcon iconName={link.icon} />
                         </a>
                     ))}
                 </div>
