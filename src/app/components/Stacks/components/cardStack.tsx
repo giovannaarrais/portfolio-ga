@@ -64,7 +64,8 @@ const CardStack = ({stackId, stackIcon, stackImageIcon, stackName, stackLevel}:C
                 <CardTitle className="mb-2">{stackName}</CardTitle>
                 <CardDescription className='gap-2'>
                     <div className='flex  items-center gap-2'>
-                        <Progress value={progressForLevel(stackLevel as LevelProps)} 
+                        {stackLevel && (
+                            <Progress value={progressForLevel(stackLevel as LevelProps)} 
                             className={`
                             [&>div]:bg-gradient-to-r 
                             bg-gray-500/25
@@ -73,6 +74,7 @@ const CardStack = ({stackId, stackIcon, stackImageIcon, stackName, stackLevel}:C
                             ${stackLevel === "intermediario" && "[&>div]:from-orange-400 [&>div]:to-orange-800"}
                             ${stackLevel === "avancado" && "[&>div]:from-red-400 [&>div]:to-red-800"}
                             `}/>
+                        )}
                         {nameLevel}
                     </div>
                 </CardDescription>
