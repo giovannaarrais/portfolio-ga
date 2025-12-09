@@ -25,7 +25,7 @@ const Stacks = async() => {
 
 
     return (
-        <section>
+        <section id='skills'>
             <Container>
                 <div className="text-center mb-20">
                     <h5 className="text-primary font-secondary flex gap-2 justify-center items-center mb-5"> <Code size={18}/> Tecnologias</h5>

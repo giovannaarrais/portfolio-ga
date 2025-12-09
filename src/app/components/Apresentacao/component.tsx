@@ -23,9 +23,9 @@ const Apresentacao = async () => {
     ])
 
     return (
-        <section className='text-center'>
+        <section className='text-center mt-20' id='inicio'>
             <Container>
-                <Badge variant="outline" className='p-2 px-6 text-sm text-primary border-primary font-secondary '>Disponível para novos projetos</Badge>
+                <Badge variant="outline" className='p-2 px-6 text-sm text-primary border-primary font-secondary'>Disponível para novos projetos</Badge>
 
                 <div className='space-y-8'>
                     <h1 className='text-7xl font-semibold max-w-4xl mx-auto'>

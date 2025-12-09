@@ -5,15 +5,15 @@ export default function Header() {
     const menuItens = [
         {
             label: 'Início',
-            href: 'inicio'
+            href: '#'
         },
         {
             label: 'Sobre',
-            href: 'sobre'
+            href: '#sobre'
         },
         {
             label: 'Skills',
-            href: 'skills'
+            href: '#skills'
         },
         {
             label: 'Projetos',
@@ -21,12 +21,12 @@ export default function Header() {
         },
         {
             label: 'Contato',
-            href: 'contato'
+            href: '#contato'
         }
     ]
 
     return (
-        <header className="p-5 border-b border-sky-500 mb-10">
+        <header  className="fixed top-0 left-0 w-full p-5 border-b border-sky-500 bg-gray-900/50 shadow-md z-50" id="header">
             <div className="max-w-screen-xl mx-auto flex justify-between items-center">
                 <div>
                     <a href="/" className="font-bold  text-secondary text-2xl font-secondary">

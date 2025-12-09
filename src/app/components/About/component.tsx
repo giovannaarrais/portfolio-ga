@@ -40,7 +40,7 @@ const About = async() => {
     ]
 
     return (
-        <section className="text-center space-y-10 mx-auto py-10 ">
+        <section className="text-center space-y-10 mx-auto py-10 " id="sobre">
             <Container>
                 <div className="text-center">
                     <h5 className="text-primary font-secondary flex gap-2 justify-center items-center mb-5"> <Sparkles size={18}/> Sobre mim</h5>
