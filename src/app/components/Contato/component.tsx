@@ -18,6 +18,7 @@ import {
 import FormContato from './components/form';
 import CardStack from '../Stacks/components/cardStack';
 import Link from 'next/link';
+import SocialComponent from './components/socialLinks';
 
 export const lucideMap = {
     Github: Icons.Github,
@@ -60,21 +61,15 @@ const Contato = async () => {
                     <CardContent className='space-y-3 mt-0 flex-1 flex flex-col justify-between'>
                         <div className='gap-4 flex flex-col justify-center'>
                             {social.map((link) => (
-                                <Link key={link.id} href={link.url} target='_blank'>
-                                    <Card className="py-4 hover:border-sky-400 hover:shadow-sky-500/25 shadow-lg transition-all hover:scale-101">
-                                        <CardContent className=' flex gap-4 px-3'>
-                                            <div className="flex-auto max-w-[50px] min-w-[50px] flex justify-center bg-sky-600/25 text-sky-500 items-center rounded-md">
-                                                <DynamicIcon iconName={link.icon}/>
-                                            </div>
-                                            <div className="flex-auto">
-                                                <CardTitle className="text-sm mb-1">{link.platform}</CardTitle>
-                                                <CardDescription className=' text-xs'>
-                                                    {link.url}
-                                                </CardDescription>
-                                            </div>
-                                        </CardContent>
-                                    </Card>
-                                </Link>
+                                <SocialComponent
+                                    key={link.id}
+                                    linkUrl={link.url}
+                                    linkId={link.id}
+                                    linkIcon={link.icon}
+                                    linkPlatform={link.platform}
+                                    linkIsActive={link.isActive}
+                                    
+                                />
                             ))}
                         </div>
 
