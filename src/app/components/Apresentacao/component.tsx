@@ -38,12 +38,12 @@ const Apresentacao = async () => {
                         {info?.bio}
                     </p>
 
-                    <div className='flex justify-center gap-3'>
-                        <a href="/" className='flex bg-gradient-primary w-max text-sm items-center p-2 px-7 rounded-lg text-black font-semibold gap-5'>
+                    <div className='flex justify-center gap-3 sm:flex-row flex-col'>
+                        <a href="#projetos" className='flex bg-gradient-primary sm:w-max text-sm items-center justify-center p-2 px-7 rounded-lg text-black font-semibold gap-5'>
                             Ver Projetos
                             <ArrowRight size={18}/>
                         </a>
-                        <a href="/" className='flex bg-transparent border border-primary w-max text-sm items-center p-2 px-7 rounded-lg text-light font-semibold gap-5'>
+                        <a href="#contato" className='flex bg-transparent border border-primary sm:w-max text-sm items-center justify-center p-2 px-7 rounded-lg text-light font-semibold gap-5 hover:bg-sky-600/25 transition-all'>
                             Entar em contato
                         </a>
                     </div>
