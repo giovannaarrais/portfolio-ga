@@ -15,11 +15,12 @@ import {
 } from "@/components/ui/form";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 const formSchema = z.object({
     nome: z.string().max(200),
     email: z.email("Email inválido"),
-    mensagem: z.string().max(700),
+    mensagem: z.string(),
 });
 
 type FormValues = z.infer<typeof formSchema>;
@@ -34,7 +35,31 @@ const FormContato = () => {
         },
     });
 
-    async function onSubmit(values: FormValues) {}
+    async function onSubmit(values: FormValues) {
+        try {
+            const response = await fetch('/api/contact', {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(values)
+            })
+
+            if(!response.ok){
+                toast.error("Erro ao enviar email")
+                return
+            }
+
+            console.log('response', response)
+            console.log('values', values)
+            toast.success("Email enviado com sucesso!")
+            form.reset()
+
+        } catch(error){
+            console.log(error)
+            toast.error("Falha ao enviar email")
+
+        }
+
+    }
 
     return (
         <div className="mt-5">
@@ -49,6 +74,7 @@ const FormContato = () => {
                                 <FormControl>
                                     <Input
                                         placeholder="Digite seu nome: "
+                                        required
                                         {...field}
                                     />
                                 </FormControl>
@@ -66,6 +92,7 @@ const FormContato = () => {
                                 <FormControl>
                                     <Input
                                         placeholder="Digite seu email: "
+                                        required
                                         {...field}
                                     />
                                 </FormControl>
@@ -82,10 +109,10 @@ const FormContato = () => {
                                 <FormLabel />
                                 <FormControl>
                                     <Textarea
-                                        {...field}
-                                        id="form-rhf-textarea-about"
+                                        className="min-h-[120px] max-h-[200px]"
                                         placeholder="Digite sua mensagem: "
-                                        className="min-h-[120px]"
+                                        required
+                                        {...field}
                                     />
                                 </FormControl>
                                 <FormMessage />

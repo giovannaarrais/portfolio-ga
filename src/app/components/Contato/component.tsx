@@ -42,6 +42,7 @@ const Contato = async () => {
                     <h1 className='text-6xl font-semibold max-w-4xl mx-auto'>
                         Vamos trabalhar <span className='text-gradient-primary'> juntos?</span>
                     </h1>
+                    
                     <p className='max-w-lg mx-auto text-muted-foreground text-lg'>
                     Estou aberta a novas oportunidades e colaborações. Entre em contato e vamos criar algo incrível!
                     </p>
