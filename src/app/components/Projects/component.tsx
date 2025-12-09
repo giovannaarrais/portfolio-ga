@@ -21,7 +21,7 @@ const Projects = async() => {
                     Desenvolvidos com dedicação e atenção aos detalhes
                     </p>
                 </div>
-                <div className="grid grid-cols-2 gap-9 mb-10">
+                <div className="grid md:grid-cols-2 grid-cols-1  gap-9 mb-10">
                     {projects.length > 0 && (
                         projects.map((project) => (
                             project.isActive && (

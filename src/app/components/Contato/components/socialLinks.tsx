@@ -26,7 +26,7 @@ const SocialComponent = ({
             {linkIsActive && (
                 <Link href={linkUrl} target="_blank">
                     <Card className="py-4 shadow-lg transition-all hover:scale-101 hover:border-sky-400 hover:shadow-sky-500/25">
-                        <CardContent className="flex gap-4 px-3">
+                        <CardContent className="flex sm:gap-4 gap-2 sm:px-3 px-2">
                             <div className="flex max-w-[50px] min-w-[50px] flex-auto items-center justify-center rounded-md bg-sky-600/25 text-sky-500">
                                 <DynamicIcon iconName={linkIcon} />
                             </div>
@@ -34,7 +34,7 @@ const SocialComponent = ({
                                 <CardTitle className="mb-1 text-sm">
                                     {linkPlatform}
                                 </CardTitle>
-                                <CardDescription className="text-xs">
+                                <CardDescription className="text-xs inline-block" style={{ wordBreak: "break-word" }}>
                                     {linkUrl}
                                 </CardDescription>
                             </div>

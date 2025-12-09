@@ -120,7 +120,7 @@ const FormContato = () => {
                         )}
                     />
 
-                    <Button type="submit" className="bg-gradient-primary block w-[300px] text-black m-auto mt-4">
+                    <Button type="submit" className="bg-gradient-primary block sm:w-[300px] w-full text-black m-auto mt-4">
                         Enviar mensagem
                     </Button>
                 </form>

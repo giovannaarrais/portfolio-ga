@@ -28,7 +28,7 @@ const Apresentacao = async () => {
                 <Badge variant="outline" className='p-2 px-6 text-sm text-primary border-primary font-secondary'>Disponível para novos projetos</Badge>
 
                 <div className='space-y-8'>
-                    <h1 className='text-7xl font-semibold max-w-4xl mx-auto'>
+                    <h1 className='sm:text-7xl text-5xl font-semibold max-w-4xl mx-auto'>
                         Olá, eu sou <span className='text-gradient-primary'>{info?.fullName}</span>
                     </h1>
                     <h3 className='text-muted-foreground text-2xl'>

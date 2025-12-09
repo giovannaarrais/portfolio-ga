@@ -48,7 +48,7 @@ const About = async() => {
                         Prazer em <span className='text-gradient-primary'>conhecê-lo!</span>
                     </h1>
                 </div>
-                <article className="flex justify-between">
+                <article className="flex justify-between gap-4 md:flex-row flex-col">
                     <div className="flex-1 text-start">
                         <p style={{whiteSpace: "pre-line"}} className="text-muted-foreground">
                             {info?.aboutMe}

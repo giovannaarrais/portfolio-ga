@@ -2,14 +2,6 @@ import React from 'react';
 import Container from '../Container/container';
 import { Code, Code2, Database, Ellipsis, Wrench } from 'lucide-react';
 import { StacksEFerramentas } from '@/data/Stacks/get';
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
-import { Progress } from "@/components/ui/progress"
 import HeaderStack from './components/headerStack';
 import CardStack from './components/cardStack';
 
@@ -37,9 +29,9 @@ const Stacks = async() => {
                     </p>
                 </div>
 
-                <div className="flex justify-center gap-5">
+                <div className="flex justify-center flex-wrap gap-5">
                     {stacksFront.length > 0  && (
-                        <div className='flex-auto'>
+                        <div className='flex-auto min-w-[270px]'>
                             <HeaderStack name="Front-End" >
                                 <Code size={25}/>
                             </HeaderStack>
@@ -58,7 +50,7 @@ const Stacks = async() => {
                         </div>
                     )}
                     {stacksBack.length > 0  && (
-                        <div className='flex-auto'>
+                        <div className='flex-auto min-w-[270px]'>
                             <HeaderStack name="Back-End" >
                                 <Database size={25}/>
                             </HeaderStack>
@@ -79,7 +71,7 @@ const Stacks = async() => {
                         </div>
                     )}
                     {(ferramentas || outros)  && (
-                        <div className='flex-auto flex flex-col gap-10'>
+                        <div className='flex-auto flex flex-col gap-10 min-w-[270px]'>
                             {ferramentas.length > 0 && (
                                 <div>
                                     <HeaderStack name="Ferramentas" >
