@@ -1,5 +1,4 @@
 import { FolderTree, Github } from "lucide-react";
-import Container from "../Container/container";
 import { ProjectsCompleted } from "@/data/Projects/get";
 import CardProject from "./components/cardProject";
 import Link from "next/link";
@@ -11,7 +10,7 @@ const Projects = async() => {
 
     return (
         <section id="projetos">
-            <Container>
+            <div className='max-w-screen-2xl mx-auto py-20 space-y-10 px-5'>
                 <div className="text-center mb-15">
                     <h5 className="text-primary font-secondary flex gap-2 justify-center items-center mb-5"> <FolderTree size={20}/> Projetos</h5>
                     <h1 className='text-5xl font-semibold max-w-4xl mx-auto'>
@@ -21,7 +20,7 @@ const Projects = async() => {
                     Desenvolvidos com dedicação e atenção aos detalhes
                     </p>
                 </div>
-                <div className="grid md:grid-cols-2 grid-cols-1  gap-9 mb-10">
+                <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1  gap-5 mb-10">
                     {projects.length > 0 && (
                         projects.map((project) => (
                             project.isActive && (
@@ -50,7 +49,7 @@ const Projects = async() => {
                     </Link>
                 </div>
 
-            </Container>
+            </div>
         </section>
     );
 };

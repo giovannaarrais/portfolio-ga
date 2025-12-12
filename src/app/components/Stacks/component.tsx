@@ -1,10 +1,11 @@
+
 import React from 'react';
 import Container from '../Container/container';
 import { Code, Code2, Database, Ellipsis, Wrench } from 'lucide-react';
 import { StacksEFerramentas } from '@/data/Stacks/get';
 import HeaderStack from './components/headerStack';
 import CardStack from './components/cardStack';
-
+import LoopStacks from './components/LoopStacks';
 
 const Stacks = async() => {
 
@@ -121,6 +122,8 @@ const Stacks = async() => {
                     )}
                 </div>
             </Container>
+
+            <LoopStacks stacks={stacks}/>
         </section>
     );
 };
