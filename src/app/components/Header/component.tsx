@@ -41,7 +41,7 @@ export default async function Header() {
 
 
     return (
-        <header  className="fixed top-0 left-0 w-full p-5 border-b border-sky-500 bg-gray-900/50 shadow-md z-50" id="header">
+        <header  className="fixed top-0 left-0 w-full p-5 border-b  shadow-md z-50" id="header">
             <div className="max-w-screen-xl mx-auto ">
                 <div className="md:flex hidden justify-between items-center">
                     <div>
