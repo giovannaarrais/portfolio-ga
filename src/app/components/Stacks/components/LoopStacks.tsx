@@ -39,7 +39,7 @@ const LoopStacks = ({ stacks }:LoopStacksProps) => {
             fadeOut
             fadeOutColor="#"
             ariaLabel="Technology partners"
-            className='mb-10 opacity-30'
+            className='mb-10 opacity-15'
         />
     );
 };

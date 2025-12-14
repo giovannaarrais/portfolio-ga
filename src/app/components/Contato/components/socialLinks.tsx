@@ -28,7 +28,7 @@ const SocialComponent = ({
                     <Card className="py-4 shadow-lg transition-all hover:scale-101 hover:border-sky-400 hover:shadow-sky-500/25">
                         <CardContent className="flex sm:gap-4 gap-2 sm:px-3 px-2">
                             <div className="flex max-w-[50px] min-w-[50px] flex-auto items-center justify-center rounded-md bg-sky-600/25 text-sky-500">
-                                <DynamicIcon iconName={linkIcon} />
+                                <DynamicIcon iconName={linkIcon} size={25}/>
                             </div>
                             <div className="flex-auto">
                                 <CardTitle className="mb-1 text-sm">
