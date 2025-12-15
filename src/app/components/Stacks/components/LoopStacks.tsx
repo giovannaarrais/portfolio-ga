@@ -30,7 +30,7 @@ const LoopStacks = ({ stacks }:LoopStacksProps) => {
     return (
         <LogoLoop
             logos={techLogos}
-            speed={50}
+            speed={35}
             direction="left"
             logoHeight={48}
             gap={50}

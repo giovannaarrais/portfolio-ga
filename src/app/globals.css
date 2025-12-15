@@ -63,7 +63,7 @@
     --primary-foreground: oklch(0.17 0.02 250); /* quase preto */
 
     /* SECONDARY — #7279ec */
-    --secondary: oklch(0.67 0.13 266.2);
+    --secondary: oklch(0.58 0.20 300);
     --secondary-foreground: oklch(0.17 0.02 250);
 
     /* BG INICIO – gradientes */
@@ -123,7 +123,7 @@
     --primary-foreground: oklch(0.98 0 0);
 
     /* SECONDARY — #7279ec */
-    --secondary: oklch(0.55 0.13 266.2);
+    --secondary: oklch(0.58 0.20 300);
     --secondary-foreground: oklch(0.98 0 0);
 
     /* BG INICIO – gradientes */
@@ -208,6 +208,25 @@ body {
     }
 }
 
+
+@keyframes rotateParcial {
+    0% {
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    75% {
+        transform: rotate(-10deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
 @keyframes toTop {
     0% {
         transform: translateY(0);
@@ -221,6 +240,7 @@ body {
         transform: translateY(0);
     }
 }
+
 
 #header{
     background: transparent;
@@ -237,6 +257,10 @@ body {
     -webkit-backdrop-filter: blur(12px) saturate(120%);
 
     z-index: -1; /* fica atrás do conteúdo */
+}
+
+html[data-theme="light"] #header:before{
+    background: rgb(221 221 221 / 34%) !important;
 }
 
 main {
@@ -294,8 +318,62 @@ html[data-theme="dark"] #inicio{
     position: absolute;
     top: -15%;
     left: -5%;
-    opacity: .05;
+    opacity: .03;
     animation: toTop 5s linear infinite;
+}
+
+@media screen and (max-width: 1399px) {
+    #inicio:before{
+        height: 600px;
+        width: 600px;
+    }   
+}
+
+@media screen and (max-width: 991px) {
+    #inicio .polygon-element,
+    #inicio .cube-element{
+        display: none;
+    } 
+
+    #inicio .molecula-element{
+        right: 5% !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #inicio:before{
+        height: 500px;
+        width: 500px;
+    } 
+
+    #inicio .molecula-element{
+        display: none;
+    }
+
+    #inicio .react-element{
+        right: 5% !important;
+        bottom: 1% !important;
+        height: 180px;
+        width: 180px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    #inicio:before{
+        height: 100%;
+        max-width: 320px;
+        top: 0 !important;
+        left: -20%;
+        width: 100%;
+        max-height: 320px;
+    }
+
+    #inicio .react-element{
+        right: 10% !important;
+        bottom: 1% !important;
+        width: 150px;
+        height: 150px;
+    }
 }
 
 .element{
@@ -318,13 +396,23 @@ html[data-theme="dark"] #inicio{
 }
 
 #inicio .cube-element{
-    top: 10%;
+    bottom: 2rem;
+    left: 25%;
+    opacity: .05;
+    animation: rotateParcial  8s linear infinite;
+}
+
+#inicio .polygon-element{
+    top: 15%;
+    transform: rotate(90deg);
     right: 1%;
     opacity: .05;
 }
 
 #sobre, 
-#skills{
+#skills,
+#contato,
+#projetos{
     position: relative;
 }
 
@@ -336,4 +424,62 @@ html[data-theme="dark"] #inicio{
             transparent 1px
         );
     background-size: 24px 24px;
+}
+
+
+
+
+#contato:before{
+    content: "";
+    background-image: url('/elements/overlay.svg');
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+html[data-theme="light"] #contato:before{
+    background-image: url('/elements/overlay_light.svg') !important;
+    opacity: .7;
+}
+
+#contato .arroba-element{
+    top: 10%;
+    right: 3%;
+    opacity: .3;
+    z-index: -1;
+    animation: toTop 9s linear infinite;
+}
+
+
+#contato .chat-element{
+    bottom: 10%;
+    left: 3%;
+    opacity: .3;
+    z-index: -1;
+}
+
+@media screen and (max-width: 991px){
+    #contato .arroba-element{
+        top: 5% !important;
+    }
+
+    #contato .chat-element{
+        bottom: 1% !important; 
+    }
+}
+
+@media screen and (max-width: 575px){
+    #contato .arroba-element{
+        height: 80px !important;
+        top: 3% !important;
+    }
+
+    #contato .chat-element{
+        bottom: 1% !important; 
+    }
 }

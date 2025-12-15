@@ -78,10 +78,18 @@ const Apresentacao = async () => {
             />
 
             <Image
-                src="/elements/cube.svg"
-                alt="Moleculas"
+                src="/elements/polygon.svg"
+                alt="polygon"
                 width={120}
                 height={120}
+                className='polygon-element element'
+            />
+
+            <Image
+                src="/elements/cube.svg"
+                alt="Cube"
+                width={150}
+                height={150}
                 className='cube-element element'
             />
 

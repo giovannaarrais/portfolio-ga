@@ -19,6 +19,7 @@ import FormContato from './components/form';
 import CardStack from '../Stacks/components/cardStack';
 import Link from 'next/link';
 import SocialComponent from './components/socialLinks';
+import Image from 'next/image';
 
 export const lucideMap = {
     Github: Icons.Github,
@@ -84,6 +85,23 @@ const Contato = async () => {
                     </CardContent>
                 </Card>
             </Container>
+
+            <Image
+                src="/elements/arroba.svg"
+                alt="Arroba"
+                width={100}
+                height={100}
+                className='arroba-element element'
+            />
+
+            <Image
+                src="/elements/chat.svg"
+                alt="chat"
+                width={100}
+                height={100}
+                className='chat-element element'
+            />
+
         
         </section>
     );

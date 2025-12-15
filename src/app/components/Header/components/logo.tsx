@@ -1,13 +1,19 @@
+import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Logo = () => {
     return (
-        <a
+        <Link
             href="/"
-            className="text-secondary font-secondary text-2xl font-bold"
         >
-            &lt;GA /&gt;
-        </a>
+            <Image
+                src="/logo_ga.png"
+                alt=""
+                width={80}
+                height={50}
+            />
+        </Link>
     );
 };
 

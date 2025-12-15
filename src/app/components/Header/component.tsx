@@ -50,7 +50,7 @@ export default async function Header() {
                     <div>
                         <ul className="flex gap-8">
                             {menuItens.map((item) => (
-                                <li key={`menu-${item.label}`} className="text-sm text-muted-foreground hover:text-white transition-all">
+                                <li key={`menu-${item.label}`} className="text-sm  hover:text-secondary opacity-80 transition-all">
                                     <a href={item.href}>
                                         {item.label}
                                     </a>

@@ -10,7 +10,7 @@ const Projects = async() => {
 
     return (
         <section id="projetos">
-            <div className='max-w-screen-2xl mx-auto py-20 space-y-10 px-5'>
+            <div className='max-w-screen-2xl mx-auto py-20 space-y-10 px-5 relative z-10'>
                 <div className="text-center mb-15">
                     <h5 className="text-primary font-secondary flex gap-2 justify-center items-center mb-5"> <FolderTree size={20}/> Projetos</h5>
                     <h1 className='text-5xl font-semibold max-w-4xl mx-auto'>
