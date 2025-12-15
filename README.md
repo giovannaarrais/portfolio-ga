@@ -15,8 +15,6 @@ O projeto resolve a necessidade de ter uma presença digital profissional centra
 
 ## 🎨 Demonstração / Preview
 
-> **Nota:** Adicione aqui uma captura de tela ou GIF demonstrando a aplicação em funcionamento.
-
 A aplicação apresenta uma interface moderna com:
 
 - Design responsivo que se adapta a diferentes dispositivos
@@ -247,42 +245,6 @@ portfolio-ga/
 - ✅ **Validação de formulários**: Zod para schemas de validação
 - ✅ **Tratamento de erros**: Try/catch em operações assíncronas
 
-## 🔮 Possíveis Melhorias Futuras
-
-### Funcionalidades
-
-- [ ] Sistema de blog integrado
-- [ ] Seção de depoimentos/testemunhos
-- [ ] Integração com Google Analytics
-- [ ] Modo offline/PWA
-- [ ] Internacionalização (i18n) - suporte a múltiplos idiomas
-- [ ] Sistema de comentários nos projetos
-- [ ] Filtros e busca nos projetos
-- [ ] Animações mais elaboradas com Framer Motion
-- [ ] Integração com CMS headless (ex: Sanity, Contentful)
-
-### Performance
-
-- [ ] Implementar cache de dados
-- [ ] Otimização de bundle size
-- [ ] Lazy loading de seções pesadas
-- [ ] Service Worker para cache offline
-
-### UX/UI
-
-- [ ] Animações de scroll (scroll reveal)
-- [ ] Melhorias na transição de temas
-- [ ] Modo de leitura/alta contraste
-- [ ] Mais opções de personalização visual
-
-### Técnicas
-
-- [ ] Testes unitários (Jest, Vitest)
-- [ ] Testes E2E (Playwright, Cypress)
-- [ ] CI/CD pipeline
-- [ ] Monitoramento de erros (Sentry)
-- [ ] Documentação de componentes (Storybook)
-
 ## 👤 Autor(a)
 
 **Giovanna Arrais**
@@ -297,16 +259,3 @@ portfolio-ga/
 ## 📝 Licença
 
 Este projeto é privado e de uso pessoal. Todos os direitos reservados.
-
----
-
-## 🙏 Agradecimentos
-
-- [Next.js](https://nextjs.org/) pela excelente documentação
-- [shadcn/ui](https://ui.shadcn.com/) pelos componentes base
-- [Radix UI](https://www.radix-ui.com/) pelos componentes acessíveis
-- Comunidade open source pelas ferramentas incríveis
-
----
-
-**Desenvolvido com ❤️ usando Next.js e TypeScript**
