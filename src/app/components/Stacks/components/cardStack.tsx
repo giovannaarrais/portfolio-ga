@@ -71,8 +71,8 @@ const CardStack = ({stackId, stackIcon, stackImageIcon, stackName, stackLevel}:C
                                 bg-gray-500/25
                                 ${stackLevel === "basico" && "[&>div]:from-green-400 [&>div]:to-green-800"}
                                 ${stackLevel === "medio" && "[&>div]:from-purple-400 [&>div]:to-purple-800"}
-                                ${stackLevel === "intermediario" && "[&>div]:from-orange-400 [&>div]:to-orange-800"}
-                                ${stackLevel === "avancado" && "[&>div]:from-red-400 [&>div]:to-red-800"}
+                                ${stackLevel === "intermediario" && "[&>div]:from-blue-400 [&>div]:to-blue-800"}
+                                ${stackLevel === "avancado" && "[&>div]:from-orange-400 [&>div]:to-orange-800"}
                                 `}/>
                             )}
                             {nameLevel}
