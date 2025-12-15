@@ -128,7 +128,7 @@
 
     /* BG INICIO – gradientes */
     --primary-hsl: 195 100% 50%;
-    --primary-alpha: 0.20;
+    --primary-alpha: 0.15;
     --accent-hsl: 260 20% 60%;
     --accent-alpha: 0.10;
     --aux-bg: #021b3b47;
@@ -208,6 +208,20 @@ body {
     }
 }
 
+@keyframes toTop {
+    0% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-50px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
 #header{
     background: transparent;
     isolation: isolate;
@@ -223,10 +237,9 @@ body {
     -webkit-backdrop-filter: blur(12px) saturate(120%);
 
     z-index: -1; /* fica atrás do conteúdo */
-
 }
 
-#inicio {
+main {
     background-image:
         radial-gradient(
             at 50% 50%,
@@ -234,10 +247,29 @@ body {
             var(--aux-bg) 50%
         ),
         radial-gradient(
+            at 20% 20%,
+            hsl(var(--accent-hsl) / var(--accent-alpha)),
+            var(--aux-bg) 50%
+        ),
+        radial-gradient(
             at 80% 80%,
             hsl(var(--accent-hsl) / var(--accent-alpha)),
             var(--aux-bg) 50%
         );
+}
+
+html[data-theme="dark"] #inicio{
+    background-image:
+    radial-gradient(
+        at 50% 50%,
+        hsl(var(--primary-hsl) / var(--primary-alpha)),
+        var(--aux-bg) 50%
+    ),
+    radial-gradient(
+        at 80% 80%,
+        hsl(var(--accent-hsl) / var(--accent-alpha)),
+        var(--aux-bg) 50%
+    ); 
 }
 
 #inicio:after{
@@ -253,13 +285,42 @@ body {
         background-size: 60px 60px;
 }
 
+#inicio:before{
+    content: "";
+    height: 800px;
+    width: 800px;
+    background-color: var(--secondary);
+    border-radius: 100%;
+    position: absolute;
+    top: -15%;
+    left: -5%;
+    opacity: .05;
+    animation: toTop 5s linear infinite;
+}
+
+.element{
+    position: absolute;
+    z-index: 0;
+}
 
 #inicio .react-element{
-    position: absolute;
     bottom: 5rem;
     right: 5rem;
     opacity: .05;
     animation: rotate 15s linear infinite;
+}
+
+#inicio .molecula-element{
+    top: 30%;
+    right: 30%;
+    opacity: .05;
+    animation: toTop 10s linear infinite;
+}
+
+#inicio .cube-element{
+    top: 10%;
+    right: 1%;
+    opacity: .05;
 }
 
 #sobre, 

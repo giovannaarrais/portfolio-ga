@@ -66,9 +66,25 @@ const Apresentacao = async () => {
                 alt="React"
                 width={250}
                 height={250}
-                className='react-element'
+                className='react-element element'
             />
-        
+
+            <Image
+                src="/elements/moleculas.svg"
+                alt="Moleculas"
+                width={170}
+                height={170}
+                className='molecula-element element'
+            />
+
+            <Image
+                src="/elements/cube.svg"
+                alt="Moleculas"
+                width={120}
+                height={120}
+                className='cube-element element'
+            />
+
         </section>
     );
 };
