@@ -59,7 +59,7 @@ const CardProject = async({id, description, isActive, title, urlImage, urlSite, 
                     </CardDescription>
                 )}
                 {stacksOfProject.map((stack) => (
-                    <Badge key={stack.id} variant="outline" className='p-1 px-3 mr-2 border-sky-400/50 text-sky-500 bg-gray-700/50'>{stack.name}</Badge>
+                    <Badge key={stack.id} variant="outline" className='p-1 px-3 mr-2 border-sky-400/50 text-sky-500 bg-gray-700/50 stacks-projects'>{stack.name}</Badge>
                 ))}
             </CardContent>
 

@@ -421,6 +421,11 @@ html[data-theme="dark"] #inicio{
 }
 
 
+html[data-theme="light"] #projetos .stacks-projects{
+    color: white !important;
+}
+
+
 #skills{
     background-image:
         radial-gradient(
