@@ -86,34 +86,36 @@ export default async function Header() {
                                     <Logo  />
                                 </SheetTitle>
                             </SheetHeader>
+                            <div className="overflow-x-scroll">
                                 <div>
-                                    <ul className="flex flex-col gap-3">
-                                        {menuItens.map((item) => (
-                                            <li key={`menu-${item.label}`} className="text-md hover:text-white transition-all border-sky-600/50 border-b pb-3">
-                                                <a href={item.href} className="flex justify-between px-1 items-center">
-                                                    {item.label} 
-                                                    <ArrowRight size={19}/>
-                                                </a>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </div>
+                                        <ul className="flex flex-col gap-3">
+                                            {menuItens.map((item) => (
+                                                <li key={`menu-${item.label}`} className="text-md hover:text-white transition-all border-sky-600/50 border-b pb-3">
+                                                    <a href={item.href} className="flex justify-between px-1 items-center">
+                                                        {item.label} 
+                                                        <ArrowRight size={19}/>
+                                                    </a>
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
 
-                                <div className='gap-3 flex flex-col justify-center mt-15'>
-                                    <h3 className="text-xl font-semibold mx-auto">
-                                        Vamos se <span className="text-gradient-primary">conectar?</span>
-                                    </h3>
-                                    {social.map((link) => (
-                                        <SocialComponent
-                                            key={link.id}
-                                            linkUrl={link.url}
-                                            linkId={link.id}
-                                            linkIcon={link.icon}
-                                            linkPlatform={link.platform}
-                                            linkIsActive={link.isActive}
-                                        />
-                                    ))}
-                                </div>
+                                    <div className='gap-3 flex flex-col justify-center mt-15'>
+                                        <h3 className="text-xl font-semibold mx-auto">
+                                            Vamos se <span className="text-gradient-primary">conectar?</span>
+                                        </h3>
+                                        {social.map((link) => (
+                                            <SocialComponent
+                                                key={link.id}
+                                                linkUrl={link.url}
+                                                linkId={link.id}
+                                                linkIcon={link.icon}
+                                                linkPlatform={link.platform}
+                                                linkIsActive={link.isActive}
+                                            />
+                                        ))}
+                                    </div>
+                            </div>
                         </SheetContent>
                     </Sheet>
                 </div>
