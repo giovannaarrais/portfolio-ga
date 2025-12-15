@@ -11,11 +11,10 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
-import { Button } from '@/components/ui/button';
 import { ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
 import { ProjectsAndTechonologies } from '@/data/ProjectsAndTechonologies/get';
-import { StacksEFerramentas, StacksEFerramentasById } from '@/data/Stacks/get';
+import { StacksEFerramentas } from '@/data/Stacks/get';
 
 interface CardProjectProps {
     id: string;

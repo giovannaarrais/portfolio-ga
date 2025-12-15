@@ -1,32 +1,38 @@
-"use client"
+"use client";
 
-import LogoLoop from '@/components/LogoLoop';
-import * as Icons from 'react-icons/si';
+import LogoLoop from "@/components/LogoLoop";
+import { ReactNode } from "react";
+import * as Icons from "react-icons/si";
 
 interface LoopStacksProps {
     stacks: {
-        icon: string,
-    }[]
+        icon: string | null;
+    }[];
 }
 
+const LoopStacks = ({ stacks }: LoopStacksProps) => {
+    const techLogos = stacks
+        .filter(
+            (stack): stack is { icon: string } =>
+                typeof stack.icon === "string",
+        )
+        .flatMap((stack) => {
+            const IconComponent =
+                Icons[`Si${stack.icon}` as keyof typeof Icons];
 
-const LoopStacks = ({ stacks }:LoopStacksProps) => {
+            if (!IconComponent) {
+                console.warn("Ícone não encontrado", stack.icon);
+                return [];
+            }
 
-    const techLogos = stacks.map((stack) => {
-        const IconComponent = Icons[`Si${stack.icon}` as keyof typeof Icons]
-
-        if(!IconComponent){
-            console.warn("Icone nao encontrado", stack.icon)
-            return null
-        }
-
-        return {
-            node: <IconComponent />,
-            title: stack.icon,
-            href: "#"
-        }
-    }).filter((item): item is NonNullable<typeof item> => item !== null) // Remove nulls
-
+            return [
+                {
+                    node: <IconComponent />,
+                    title: stack.icon,
+                    href: "#",
+                },
+            ];
+        });
     return (
         <LogoLoop
             logos={techLogos}
@@ -39,7 +45,7 @@ const LoopStacks = ({ stacks }:LoopStacksProps) => {
             fadeOut
             fadeOutColor="#"
             ariaLabel="Technology partners"
-            className='mb-10 opacity-15'
+            className="mb-10 opacity-15"
         />
     );
 };
