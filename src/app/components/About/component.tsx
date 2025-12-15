@@ -19,7 +19,7 @@ const About = async() => {
         {
             id: 1,
             name: 'Front-End',
-            descricao: 'Interfaces modernas e responsivas com React, TypeScript e Tailwind CSS',
+            descricao: 'Interfaces modernas e responsivas com foco na experiência do usuário.',
             color: 'text-sky-700 bg-sky-800/25',
             icon:  <Code/>
         },

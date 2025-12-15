@@ -348,6 +348,7 @@ html[data-theme="dark"] #inicio{
     #inicio:before{
         height: 500px;
         width: 500px;
+        opacity: .05;
     } 
 
     #inicio .molecula-element{
