@@ -7,10 +7,13 @@ import {
     SheetTitle,
     SheetTrigger,
   } from "@/components/ui/sheet"
-import { ArrowRight, Menu, MoveRight } from "lucide-react"
+import { ArrowRight, Menu, MoveRight, Sun } from "lucide-react"
 import Logo from "./components/logo"
 import { SocialLinks } from "@/data/Social/get"
 import SocialComponent from "../Contato/components/socialLinks"
+import { useEffect, useState } from "react"
+import ButtonTheme from "./components/buttonTheme"
+
 
 export default async function Header() {
 
@@ -37,6 +40,8 @@ export default async function Header() {
         }
     ]
 
+   
+
     const  social = await SocialLinks()
 
 
@@ -58,10 +63,11 @@ export default async function Header() {
                             ))}
                         </ul>
                     </div>
-                    <div>
-                        <Button variant={"default"} className="bg-gradient-primary transition-colors cursor-pointer">
+                    <div className="flex items-center gap-4">
+                        <Button variant="default" className="bg-gradient-primary transition-colors cursor-pointer">
                             Vamos Conversar
                         </Button>
+                        <ButtonTheme />
                     </div>
                 </div>
 
@@ -70,7 +76,10 @@ export default async function Header() {
                         <Logo  />
                     </div>
                     <Sheet >
-                        <SheetTrigger> <Menu size={30}/></SheetTrigger>
+                        <div className="flex items-center gap-4">
+                            <ButtonTheme></ButtonTheme>
+                            <SheetTrigger> <Menu size={30}/></SheetTrigger>
+                        </div>
                         <SheetContent className="p-5">
                             <SheetHeader className="mb-5 p-0">
                                 <SheetTitle >

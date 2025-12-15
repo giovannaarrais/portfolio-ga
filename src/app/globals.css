@@ -253,10 +253,14 @@ body {
     inset: 0;
 
     background: rgba(10, 10, 20, 0.45); /* leve overlay */
-    backdrop-filter: blur(12px) saturate(120%);
-    -webkit-backdrop-filter: blur(12px) saturate(120%);
-
+    backdrop-filter: blur(12px) saturate(120%) !important;
+    --webkit-backdrop-filter: blur(12px) saturate(120%);
+    
     z-index: -1; /* fica atrás do conteúdo */
+}
+
+#header:before{
+    backdrop-filter: blur(12px) saturate(120%) !important;
 }
 
 html[data-theme="light"] #header:before{

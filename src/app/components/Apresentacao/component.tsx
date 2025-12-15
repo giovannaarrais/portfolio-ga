@@ -53,9 +53,11 @@ const Apresentacao = async () => {
 
                     <div className='gap-4 flex justify-center'>
                         {social.map((link) => (
-                            <a href={link.url} key={`link-${link.id}`} target='_blank'>
-                                <DynamicIcon iconName={link.icon} size={22}/>
-                            </a>
+                            link.isActive && (
+                                <a href={link.url} key={`link-${link.id}`} target='_blank'>
+                                    <DynamicIcon iconName={link.icon} size={22}/>
+                                </a>
+                            )
                         ))}
                     </div>
                 </Container>

@@ -10,7 +10,7 @@ export default function Footer() {
                     © {dateAtual} Giovanna Arrais. Todos os direitos reservados.
                 </div>
                 <div>
-                    <a href="#" className="hover:underline">
+                    <a href="#" className="hover:underline font-semibold underline">
                         Voltar ao início
                     </a>
                 </div>
