@@ -564,3 +564,20 @@ html[data-theme="light"] #contato:before{
         bottom: 1% !important; 
     }
 }
+
+
+#skills .stacks{
+    overflow-x: hidden;
+    max-height: 570px;
+    padding: 0 10px;
+
+    /* Firefox */
+    scrollbar-width: none;
+
+    /* IE / Edge antigo */
+    -ms-overflow-style: none;
+}
+#skills .stacks::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+}

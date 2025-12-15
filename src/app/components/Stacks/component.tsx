@@ -36,18 +36,20 @@ const Stacks = async() => {
                             <HeaderStack name="Front-End" >
                                 <Code size={25}/>
                             </HeaderStack>
-                            {stacksFront.map((stack) => (
-                                stack.isActive && (
-                                    <CardStack 
-                                        key={stack.id}
-                                        stackId={stack.id}
-                                        stackIcon={stack.icon}
-                                        stackImageIcon={stack.ImageIcon}
-                                        stackName={stack.name}
-                                        stackLevel={stack.level}
-                                    />
-                                )
-                            ))}
+                            <div className="stacks">
+                                {stacksFront.map((stack) => (
+                                    stack.isActive && (
+                                        <CardStack 
+                                            key={stack.id}
+                                            stackId={stack.id}
+                                            stackIcon={stack.icon}
+                                            stackImageIcon={stack.ImageIcon}
+                                            stackName={stack.name}
+                                            stackLevel={stack.level}
+                                        />
+                                    )
+                                ))}
+                            </div>
                         </div>
                     )}
                     {stacksBack.length > 0  && (
@@ -55,19 +57,19 @@ const Stacks = async() => {
                             <HeaderStack name="Back-End" >
                                 <Database size={25}/>
                             </HeaderStack>
-                            <div>
-                            {stacksBack.map((stack) => (
-                                stack.isActive && (
-                                    <CardStack 
-                                    key={stack.id}
-                                    stackId={stack.id}
-                                    stackIcon={stack.icon}
-                                    stackImageIcon={stack.ImageIcon}
-                                    stackName={stack.name}
-                                    stackLevel={stack.level}
-                                />
-                                )
-                            ))}
+                            <div className="stacks">
+                                {stacksBack.map((stack) => (
+                                    stack.isActive && (
+                                        <CardStack
+                                        key={stack.id}
+                                        stackId={stack.id}
+                                        stackIcon={stack.icon}
+                                        stackImageIcon={stack.ImageIcon}
+                                        stackName={stack.name}
+                                        stackLevel={stack.level}
+                                    />
+                                    )
+                                ))}
                             </div>
                         </div>
                     )}
@@ -78,7 +80,7 @@ const Stacks = async() => {
                                     <HeaderStack name="Ferramentas" >
                                         <Wrench  size={25}/>
                                     </HeaderStack>
-                                    <div>
+                                    <div className='stacks'>
                                     {ferramentas.map((stack) => (
                                         stack.isActive && (
                                             <CardStack 
@@ -100,7 +102,7 @@ const Stacks = async() => {
                                     <HeaderStack name="Outros" >
                                         <Ellipsis  size={25}/>
                                     </HeaderStack>
-                                    <div>
+                                    <div className='stacks'>
                                     {outros.map((stack) => (
                                         stack.isActive && (
                                             <CardStack 
