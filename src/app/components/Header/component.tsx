@@ -13,6 +13,7 @@ import { SocialLinks } from "@/data/Social/get"
 import SocialComponent from "../Contato/components/socialLinks"
 import { useEffect, useState } from "react"
 import ButtonTheme from "./components/buttonTheme"
+import Link from "next/link"
 
 
 export default async function Header() {
@@ -64,9 +65,9 @@ export default async function Header() {
                         </ul>
                     </div>
                     <div className="flex items-center gap-4">
-                        <Button variant="default" className="bg-gradient-primary transition-colors cursor-pointer">
+                        <Link href='#contato' className="bg-gradient-primary transition-colors cursor-pointer py-[5px] px-4  rounded">
                             Vamos Conversar
-                        </Button>
+                        </Link>
                         <ButtonTheme />
                     </div>
                 </div>
@@ -86,7 +87,7 @@ export default async function Header() {
                                     <Logo  />
                                 </SheetTitle>
                             </SheetHeader>
-                            <div className="overflow-x-scroll">
+                            <div className="overflow-y-auto">
                                 <div>
                                         <ul className="flex flex-col gap-3">
                                             {menuItens.map((item) => (
@@ -100,7 +101,7 @@ export default async function Header() {
                                         </ul>
                                     </div>
 
-                                    <div className='gap-3 flex flex-col justify-center mt-15'>
+                                    <div className='gap-3 flex flex-col justify-center mt-15 overflow-x-hidden px-2'>
                                         <h3 className="text-xl font-semibold mx-auto">
                                             Vamos se <span className="text-gradient-primary">conectar?</span>
                                         </h3>
