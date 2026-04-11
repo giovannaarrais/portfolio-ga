@@ -76,7 +76,7 @@
 
     /* SECONDARY — #7279ec */
     --secondary: #7279ec;
-    --secondary: oklch(0.58 0.20 300);
+    --secondary: oklch(0.58 0.2 300);
 
     --secondary-foreground: #111827;
     --secondary-foreground: oklch(0.17 0.02 250);
@@ -160,7 +160,6 @@
     --sidebar-ring: #94a3b8;
     --sidebar-ring: oklch(0.65 0.03 260);
 
-    
     /* BG INICIO – gradientes */
     --primary-hsl: 215 90% 55%;
     --primary-alpha: 0.34;
@@ -196,7 +195,7 @@
     --primary-foreground: oklch(0.98 0 0);
 
     --secondary: #7279ec;
-    --secondary: oklch(0.58 0.20 300);
+    --secondary: oklch(0.58 0.2 300);
 
     --secondary-foreground: #ffffff;
     --secondary-foreground: oklch(0.98 0 0);
@@ -225,12 +224,11 @@
     --ring: #94a3b8;
     --ring: oklch(0.6 0.02 260);
 
-
     /* BG INICIO – gradientes */
     --primary-hsl: 195 100% 50%;
     --primary-alpha: 0.15;
     --accent-hsl: 260 20% 60%;
-    --accent-alpha: 0.10;
+    --accent-alpha: 0.1;
     --aux-bg: #021b3b47;
     --percent-after: 10%;
 }
@@ -265,9 +263,12 @@ body {
 }
 
 .bg-gradient-primary:hover {
-    background-image: linear-gradient(135deg, hsl(280 70% 60%) 0%, hsl(195 100% 50%) 100%);
+    background-image: linear-gradient(
+        135deg,
+        hsl(280 70% 60%) 0%,
+        hsl(195 100% 50%) 100%
+    );
 }
-
 
 @keyframes rotate {
     to {
@@ -278,7 +279,6 @@ body {
         transform: rotate(360deg);
     }
 }
-
 
 @keyframes rotateParcial {
     0% {
@@ -312,13 +312,12 @@ body {
     }
 }
 
-
-#header{
+#header {
     background: transparent;
     isolation: isolate;
 }
 
-#header:before{
+#header:before {
     content: "";
     position: absolute;
     inset: 0;
@@ -326,15 +325,15 @@ body {
     background: rgba(10, 10, 20, 0.45); /* leve overlay */
     backdrop-filter: blur(12px) saturate(120%) !important;
     --webkit-backdrop-filter: blur(12px) saturate(120%);
-    
+
     z-index: -1; /* fica atrás do conteúdo */
 }
 
-#header:before{
+#header:before {
     backdrop-filter: blur(12px) saturate(120%) !important;
 }
 
-html[data-theme="light"] #header:before{
+html[data-theme="light"] #header:before {
     background: rgb(221 221 221 / 34%) !important;
 }
 
@@ -357,34 +356,41 @@ main {
         );
 }
 
-html[data-theme="dark"] #inicio{
+html[data-theme="dark"] #inicio {
     background-image:
-    radial-gradient(
-        at 50% 50%,
-        hsl(var(--primary-hsl) / var(--primary-alpha)),
-        var(--aux-bg) 50%
-    ),
-    radial-gradient(
-        at 80% 80%,
-        hsl(var(--accent-hsl) / var(--accent-alpha)),
-        var(--aux-bg) 50%
-    ); 
+        radial-gradient(
+            at 50% 50%,
+            hsl(var(--primary-hsl) / var(--primary-alpha)),
+            var(--aux-bg) 50%
+        ),
+        radial-gradient(
+            at 80% 80%,
+            hsl(var(--accent-hsl) / var(--accent-alpha)),
+            var(--aux-bg) 50%
+        );
 }
 
-#inicio:after{
-    content: '';
+#inicio:after {
+    content: "";
     position: absolute;
     height: 100vh;
     width: 100%;
     top: 0;
     left: 0;
     background-image:
-        linear-gradient(rgb(65 73 88 / var(--percent-after)) 1px, transparent 1px),
-        linear-gradient(90deg, rgb(65 73 88 / var(--percent-after)) 1px, transparent 1px);
-        background-size: 60px 60px;
+        linear-gradient(
+            rgb(65 73 88 / var(--percent-after)) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgb(65 73 88 / var(--percent-after)) 1px,
+            transparent 1px
+        );
+    background-size: 60px 60px;
 }
 
-#inicio:before{
+#inicio:before {
     content: "";
     height: 800px;
     width: 800px;
@@ -393,40 +399,40 @@ html[data-theme="dark"] #inicio{
     position: absolute;
     top: -15%;
     left: -5%;
-    opacity: .03;
+    opacity: 0.03;
     animation: toTop 5s linear infinite;
 }
 
 @media screen and (max-width: 1399px) {
-    #inicio:before{
+    #inicio:before {
         height: 600px;
         width: 600px;
-    }   
+    }
 }
 
 @media screen and (max-width: 991px) {
     #inicio .polygon-element,
-    #inicio .cube-element{
+    #inicio .cube-element {
         display: none;
-    } 
+    }
 
-    #inicio .molecula-element{
+    #inicio .molecula-element {
         right: 5% !important;
     }
 }
 
 @media screen and (max-width: 767px) {
-    #inicio:before{
+    #inicio:before {
         height: 500px;
         width: 500px;
-        opacity: .05;
-    } 
+        opacity: 0.05;
+    }
 
-    #inicio .molecula-element{
+    #inicio .molecula-element {
         display: none;
     }
 
-    #inicio .react-element{
+    #inicio .react-element {
         right: 5% !important;
         bottom: 1% !important;
         height: 180px;
@@ -435,7 +441,7 @@ html[data-theme="dark"] #inicio{
 }
 
 @media screen and (max-width: 575px) {
-    #inicio:before{
+    #inicio:before {
         height: 100%;
         max-width: 320px;
         top: 0 !important;
@@ -444,7 +450,7 @@ html[data-theme="dark"] #inicio{
         max-height: 320px;
     }
 
-    #inicio .react-element{
+    #inicio .react-element {
         right: 10% !important;
         bottom: 1% !important;
         width: 150px;
@@ -452,67 +458,61 @@ html[data-theme="dark"] #inicio{
     }
 }
 
-.element{
+.element {
     position: absolute;
     z-index: 0;
 }
 
-#inicio .react-element{
+#inicio .react-element {
     bottom: 5rem;
     right: 5rem;
-    opacity: .05;
+    opacity: 0.05;
     animation: rotate 15s linear infinite;
 }
 
-#inicio .molecula-element{
+#inicio .molecula-element {
     top: 30%;
     right: 30%;
-    opacity: .05;
+    opacity: 0.05;
     animation: toTop 10s linear infinite;
 }
 
-#inicio .cube-element{
+#inicio .cube-element {
     bottom: 2rem;
     left: 25%;
-    opacity: .05;
-    animation: rotateParcial  8s linear infinite;
+    opacity: 0.05;
+    animation: rotateParcial 8s linear infinite;
 }
 
-#inicio .polygon-element{
+#inicio .polygon-element {
     top: 15%;
     transform: rotate(90deg);
     right: 1%;
-    opacity: .05;
+    opacity: 0.05;
 }
 
-#sobre, 
+#sobre,
 #skills,
 #contato,
-#projetos{
+#projetos {
     position: relative;
 }
 
-
-html[data-theme="light"] #projetos .stacks-projects{
+html[data-theme="light"] #projetos .stacks-projects {
     color: white !important;
 }
 
-
-#skills{
-    background-image:
-        radial-gradient(
-            hsl(var(--primary-hsl) / 0.15) 1px,
-            transparent 1px
-        );
+#skills {
+    background-image: radial-gradient(
+        hsl(var(--primary-hsl) / 0.15) 1px,
+        transparent 1px
+    );
     background-size: 24px 24px;
 }
 
-
-
-
-#contato:before{
+#contato:before {
     content: "";
-    background-image: url('/elements/overlay.svg');
+    background-image: url("/elements/overlay.svg");
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -523,50 +523,48 @@ html[data-theme="light"] #projetos .stacks-projects{
     left: 0;
 }
 
-html[data-theme="light"] #contato:before{
-    background-image: url('/elements/overlay_light.svg') !important;
-    opacity: .7;
+html[data-theme="light"] #contato:before {
+    background-image: url("/elements/overlay_light.svg") !important;
+    opacity: 0.7;
 }
 
-#contato .arroba-element{
+#contato .arroba-element {
     top: 10%;
     right: 3%;
-    opacity: .3;
+    opacity: 0.3;
     z-index: -1;
     animation: toTop 9s linear infinite;
 }
 
-
-#contato .chat-element{
+#contato .chat-element {
     bottom: 10%;
     left: 3%;
-    opacity: .3;
+    opacity: 0.3;
     z-index: -1;
 }
 
-@media screen and (max-width: 991px){
-    #contato .arroba-element{
+@media screen and (max-width: 991px) {
+    #contato .arroba-element {
         top: 5% !important;
     }
 
-    #contato .chat-element{
-        bottom: 1% !important; 
+    #contato .chat-element {
+        bottom: 1% !important;
     }
 }
 
-@media screen and (max-width: 575px){
-    #contato .arroba-element{
+@media screen and (max-width: 575px) {
+    #contato .arroba-element {
         height: 80px !important;
         top: 3% !important;
     }
 
-    #contato .chat-element{
-        bottom: 1% !important; 
+    #contato .chat-element {
+        bottom: 1% !important;
     }
 }
 
-
-#skills .stacks{
+#skills .stacks {
     overflow-x: hidden;
     max-height: 570px;
     padding: 0 10px;
@@ -580,4 +578,8 @@ html[data-theme="light"] #contato:before{
 #skills .stacks::-webkit-scrollbar {
     width: 0;
     height: 0;
+}
+
+.font-semibold {
+    font-weight: 500;
 }
