@@ -1,20 +1,23 @@
 export default function Footer() {
+    const date = new Date();
+    const dateAtual = date.getFullYear();
 
-    const date = new Date()
-    const dateAtual = date.getFullYear()
-    
     return (
-        <footer className="bg-[#171615] p-3 py-5 ">
-            <div className="max-w-screen-xl mx-auto flex gap-2 justify-between items-center sm:flex-row flex-col sm:text-start text-center text-sm text-stone-300">
+        <footer className="bg-[#171615] p-3 py-5">
+            <div className="mx-auto flex max-w-screen-xl flex-col items-center justify-between gap-2 text-center text-sm text-stone-300 sm:flex-row sm:text-start">
                 <div>
-                    © {dateAtual} Giovanna Arrais. Todos os direitos reservados.
+                    © {dateAtual} Giovanna Arrais. Todos os direitos
+                    reservados.
                 </div>
                 <div>
-                    <a href="#inicio" className="hover:text-[var(--orange)] font-semibold">
+                    <a
+                        href="#inicio"
+                        className="font-semibold hover:text-[var(--orange)]"
+                    >
                         Voltar ao início
                     </a>
                 </div>
             </div>
         </footer>
-    )
+    );
 }

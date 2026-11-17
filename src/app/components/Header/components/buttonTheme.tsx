@@ -32,8 +32,8 @@ const ButtonTheme = () => {
     return (
         <Button
             aria-label="tema"
-            variant="outline"
-            className="bg-transparent"
+            variant="secondary"
+            className="bg-white text-black hover:bg-white/70"
             onClick={onChangeMode}
         >
             {theme === 'dark' ? (
