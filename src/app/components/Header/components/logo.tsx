@@ -4,15 +4,8 @@ import React from "react";
 
 const Logo = () => {
     return (
-        <Link
-            href="/"
-        >
-            <Image
-                src="/logo_ga.png"
-                alt=""
-                width={80}
-                height={50}
-            />
+        <Link href="/">
+            <Image src="/logo.png" alt="" width={60} height={50} />
         </Link>
     );
 };

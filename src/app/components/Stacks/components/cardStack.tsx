@@ -44,9 +44,9 @@ const CardStack = ({stackId, stackIcon, stackImageIcon, stackName, stackLevel}:C
 
 
     return (
-        <Card className="mb-4 hover:border-sky-400 hover:shadow-sky-500/25 shadow-lg transition-all hover:scale-101">
+        <Card className="soft-card mb-4 transition-all hover:-translate-y-1 hover:border-[var(--orange)]">
             <CardContent className=' flex gap-4 px-3'>
-                <div className="flex-auto max-w-[50px] min-w-[50px] flex justify-center bg-gray-600/25 items-center rounded-md">
+                <div className="flex-auto max-w-[50px] min-w-[50px] flex justify-center bg-[var(--sand)] text-[var(--orange)] items-center rounded-xl">
                     {stackImageIcon !== null ? (
                         <Image
                             src={stackImageIcon}
@@ -67,12 +67,7 @@ const CardStack = ({stackId, stackIcon, stackImageIcon, stackName, stackLevel}:C
                             {stackLevel && (
                                 <Progress value={progressForLevel(stackLevel as LevelProps)} 
                                 className={`
-                                [&>div]:bg-gradient-to-r 
-                                bg-gray-500/25
-                                ${stackLevel === "basico" && "[&>div]:from-green-400 [&>div]:to-green-800"}
-                                ${stackLevel === "medio" && "[&>div]:from-purple-400 [&>div]:to-purple-800"}
-                                ${stackLevel === "intermediario" && "[&>div]:from-blue-400 [&>div]:to-blue-800"}
-                                ${stackLevel === "avancado" && "[&>div]:from-orange-400 [&>div]:to-orange-800"}
+                                [&>div]:bg-[var(--orange)] bg-[var(--sand)]
                                 `}/>
                             )}
                             {nameLevel}

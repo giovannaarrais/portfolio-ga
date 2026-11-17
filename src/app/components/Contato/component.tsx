@@ -37,12 +37,12 @@ const Contato = async () => {
     ])
 
     return (
-        <section id='contato'>
+        <section id='contato' className="bg-[var(--paper)] py-6">
             <Container>
                 <div className='space-y-8 text-center'>
-                    <h5 className="text-primary font-secondary flex gap-2 justify-center items-center mb-5"> <Icons.PhoneCall size={20}/> Contato</h5>
-                    <h1 className='text-6xl font-semibold max-w-4xl mx-auto'>
-                        Vamos trabalhar <span className='text-gradient-primary'> juntos?</span>
+                    <h5 className="eyebrow flex gap-2 justify-center items-center mb-5"> <Icons.PhoneCall size={16}/> Contato</h5>
+                    <h1 className='section-title max-w-4xl mx-auto'>
+                        Vamos trabalhar <span className='text-[var(--orange)]'> juntos?</span>
                     </h1>
                     
                     <p className='max-w-lg mx-auto text-muted-foreground text-lg'>
@@ -50,7 +50,7 @@ const Contato = async () => {
                     </p>
                 </div>
 
-                <Card className='hover:shadow-sky-500/25 shadow-lg transition-all hover:scale-101 flex md:flex-row flex-col max-w-5xl mx-auto'>
+                <Card className='soft-card flex md:flex-row flex-col max-w-5xl mx-auto overflow-hidden'>
                     <CardContent className='flex-1 md:order-1 order-2'>
                         <CardDescription className='text-muted-foreground text-md'>
                             Obrigada por visitar meu portfólio! Espero que tenha gostado do meu trabalho. Para mais informações ou para discutir uma oportunidade, entre em contato.
@@ -59,7 +59,7 @@ const Contato = async () => {
                         <FormContato />
                     </CardContent >
 
-                    <CardContent className='space-y-3 mt-0 flex-1 flex flex-col justify-between md:order-2 order-1'>
+                    <CardContent className='space-y-3 mt-0 flex-1 flex flex-col justify-between md:order-2 order-1 bg-[var(--sand)]'>
                         <div className='gap-4 flex flex-col justify-center'>
                             {social.map((link) => (
                                 <SocialComponent
@@ -76,10 +76,10 @@ const Contato = async () => {
 
                         <div className='space-y-3 '>
                             <p className='flex gap-2 items-center sm:text-sm text-xs justify-center text-center'>
-                                <Icons.MapPin className='text-purple-500' size={18}/> Brasil 
+                                <Icons.MapPin className='text-[var(--orange)]' size={18}/> Brasil
                             </p>
                             <p className='flex gap-2 items-center sm:text-sm text-xs justify-center'>
-                                <Icons.Clock  className='text-purple-500' size={18}/> Disponível para oportunidades    
+                                <Icons.Clock  className='text-[var(--orange)]' size={18}/> Disponível para oportunidades
                             </p>
                         </div>
                     </CardContent>

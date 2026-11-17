@@ -1,80 +1,12 @@
-import React from 'react';
-import { AspectRatio } from "@/components/ui/aspect-ratio"
 import Image from 'next/image';
-import { Badge } from "@/components/ui/badge"
-import {
-    Card,
-    CardAction,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card"
-import { ExternalLink, Github } from 'lucide-react';
 import Link from 'next/link';
+import { ArrowUpRight, Github } from 'lucide-react';
 import { ProjectsAndTechonologies } from '@/data/ProjectsAndTechonologies/get';
 import { StacksEFerramentas } from '@/data/Stacks/get';
-
-interface CardProjectProps {
-    id: string;
-    description: string | null;
-    isActive: boolean;
-    title: string;
-    urlImage: string;
-    urlSite: string;
-    urlGithub: string;
-    createdAt: Date;
-}
-
-const CardProject = async({id, description, isActive, title, urlImage, urlSite, urlGithub, createdAt}: CardProjectProps) => {
-
-    
-    const projectsTechonologies = await ProjectsAndTechonologies(id);
-    const techIdsOfProject = projectsTechonologies.map(pt => pt.techId);
-
-    const stacks = await StacksEFerramentas()
-
-    const stacksOfProject = stacks.filter(stack => techIdsOfProject.includes(stack.id))
-
-
-    return (
-        <Card className='hover:shadow-sky-500/25 shadow-lg transition-all hover:scale-101 pt-0'>
-            <CardHeader className='p-0'>
-                <AspectRatio ratio={16 / 9} className="bg-muted rounded-t-2xl">
-                    <Image
-                        src={urlImage}
-                        alt={title}
-                        fill
-                        className="h-full w-full rounded-t-2xl object-cover dark:brightness-[0.2] dark:grayscale"
-                    />
-                </AspectRatio>
-            </CardHeader>
-
-            <CardContent className='space-y-3 mt-0'>
-                <CardTitle className='text-lg '>{title}</CardTitle>
-                {description && (
-                    <CardDescription>
-                        {description}
-                    </CardDescription>
-                )}
-                {stacksOfProject.map((stack) => (
-                    <Badge key={stack.id} variant="outline" className='p-1 px-3 mr-2 border-sky-400/50 text-sky-500 bg-gray-700/50 stacks-projects'>{stack.name}</Badge>
-                ))}
-            </CardContent>
-
-            <CardFooter className='grid grid-cols-2 gap-3'>
-                <Link href={urlGithub} target='_blank' className='text-sm w-full flex items-center gap-2 text-center justify-center border p-2 rounded-md border-sky-500 hover:bg-sky-600/25 transition-all'>
-                    <Github size={18}/> Código
-                </Link>
-
-                <Link href={urlSite} target='_blank' className=' text-sm w-full bg-gradient-primary text-black flex items-center gap-2 text-center justify-center p-2 rounded-md  transition-all'>
-                    <ExternalLink size={18}/> 
-                    Projeto
-                </Link>
-            </CardFooter>
-        </Card>
-    );
+interface CardProjectProps { id: string; description: string | null; isActive: boolean; title: string; urlImage: string; urlSite: string; urlGithub: string; createdAt: Date; }
+const CardProject = async ({ id, description, title, urlImage, urlSite, urlGithub }: CardProjectProps) => {
+ const [relations, stacks] = await Promise.all([ProjectsAndTechonologies(id), StacksEFerramentas()]);
+ const techIds = relations.map(item => item.techId); const projectStacks = stacks.filter(stack => techIds.includes(stack.id));
+ return <article className="project-card relative flex min-h-[440px] flex-col overflow-hidden rounded-[1.4rem] p-3 text-white"><div className="relative h-52 overflow-hidden rounded-[1rem] bg-stone-800"><Image src={urlImage} alt={title} fill className="project-image object-cover" /></div><div className="flex flex-1 flex-col px-2 pb-2 pt-5"><div className="flex items-start justify-between gap-3"><h3 className="text-xl font-bold tracking-tight">{title}</h3><Link href={urlSite} target="_blank" aria-label={`Abrir ${title}`} className="round-action shrink-0"><ArrowUpRight size={20}/></Link></div>{description && <p className="mt-3 text-sm leading-relaxed text-stone-300">{description}</p>}<div className="mt-auto flex items-center justify-between gap-3 pt-5"><div className="flex flex-wrap gap-1.5">{projectStacks.map(stack => <span key={stack.id} className="rounded-full border border-white/15 px-2 py-1 text-[10px] text-stone-300">{stack.name}</span>)}</div><Link href={urlGithub} target="_blank" aria-label={`Código de ${title}`} className="text-stone-300 transition hover:text-[var(--orange)]"><Github size={19}/></Link></div></div></article>;
 };
-
 export default CardProject;

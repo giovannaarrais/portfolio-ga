@@ -40,25 +40,25 @@ const About = async() => {
     ]
 
     return (
-        <section className="text-center space-y-10 mx-auto py-10 " id="sobre">
+        <section className="text-center" id="sobre">
             <Container>
                 <div className="text-center">
-                    <h5 className="text-primary font-secondary flex gap-2 justify-center items-center mb-5"> <Sparkles size={18}/> Sobre mim</h5>
-                    <h1 className='text-5xl font-semibold max-w-4xl mx-auto'>
-                        Prazer em <span className='text-gradient-primary'>conhecê-lo!</span>
+                    <h5 className="eyebrow flex gap-2 justify-center items-center mb-5"> <Sparkles size={16}/> Sobre mim</h5>
+                    <h1 className='section-title max-w-3xl mx-auto'>
+                        Prazer em <span className='text-[var(--orange)]'>conhecê-lo!</span>
                     </h1>
                 </div>
-                <article className="flex justify-between gap-4 md:flex-row flex-col">
-                    <div className="flex-1 text-start">
-                        <p style={{whiteSpace: "pre-line"}} className="text-muted-foreground">
+                <article className="mt-12 flex justify-between gap-10 md:flex-row flex-col">
+                    <div className="flex-1 text-start rounded-[1.5rem] bg-[var(--sand)] p-7 md:p-10">
+                        <p style={{whiteSpace: "pre-line"}} className="leading-8 text-muted-foreground">
                             {info?.aboutMe}
                         </p>
                     </div>
                     <div className="flex-1 text-start items-center gap-4 flex flex-col">
                         {stacks.map((stack) => (
-                            <Card className="w-full max-w-sm flex flex-row gap-3" key={stack.id}>
+                            <Card className="soft-card w-full max-w-sm flex flex-row gap-3 text-left transition hover:-translate-y-1" key={stack.id}>
                                 <CardHeader className="flex-auto">
-                                    <span className={`${stack.color} p-2 rounded-md`}>{stack.icon}</span>
+                                    <span className="bg-[var(--sand)] text-[var(--orange)] p-2 rounded-xl">{stack.icon}</span>
                                 </CardHeader>
 
                                 <CardContent  className="flex-auto">
