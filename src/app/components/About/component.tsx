@@ -42,22 +42,25 @@ const About = async () => {
     ];
 
     return (
-        <section className="text-center rounded-4xl bg-sand" id="sobre">
+        <section className="text-center rounded-[4rem] mx-5 shadow-black" id="sobre">
             <Container>
                 <div className="text-center">
                     <h5 className="eyebrow mb-5 flex items-center justify-center gap-2">
                         {" "}
-                        <Sparkles size={16} /> Sobre mim
+                        <Star size={16} /> Sobre mim
                     </h5>
-                    <h1 className="section-title mx-auto max-w-3xl">
+                    <h1 className="section-title mx-auto max-w-3xl text-white">
                         Prazer em{" "}
                         <span className="text-[var(--orange)]">
                             conhecê-lo!
                         </span>
                     </h1>
+                    <p className=" text-md mt-4 text-white/70">
+                        Tecnologias que utilizo para criar experiências web modernas e responsivas
+                    </p>
                 </div>
                 <article className="mt-12 flex flex-col justify-between gap-10 md:flex-row">
-                    <div className="flex-1 rounded-[1.5rem] bg-[var(--sand)] p-7 text-start md:p-10">
+                    <div className="flex-1 rounded-[1.5rem] bg-white p-7 text-start md:p-10">
                         <p
                             style={{ whiteSpace: "pre-line" }}
                             className="text-muted-foreground leading-8"

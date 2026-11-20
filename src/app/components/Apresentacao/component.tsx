@@ -74,10 +74,10 @@ const Apresentacao = async () => {
                                     Projetos <ArrowDownRight size={16} />
                                 </a>
                                 <a
-                                    href="#projetos"
+                                    href="#sobre"
                                     className=" bottom-6 z-20 flex items-center gap-2 rounded-full px-4 py-2 text-sm text-white font-semibold"
                                 >
-                                    Conheça me <ArrowDownRight size={16} />
+                                    Conheça me
                                 </a>
                             </div>
                         </div>

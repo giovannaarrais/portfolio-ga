@@ -61,7 +61,7 @@ const Contato = async () => {
                         <FormContato />
                     </CardContent>
 
-                    <CardContent className="order-1 mt-0 flex flex-1 flex-col justify-between space-y-3 bg-[var(--sand)] md:order-2">
+                    <CardContent className="order-1 mt-0 flex flex-1 flex-col justify-between space-y-3 md:order-2">
                         <div className="flex flex-col justify-center gap-4">
                             {social.map((link) => (
                                 <SocialComponent
@@ -95,21 +95,6 @@ const Contato = async () => {
                 </Card>
             </Container>
 
-            <Image
-                src="/elements/arroba.svg"
-                alt="Arroba"
-                width={100}
-                height={100}
-                className="arroba-element element"
-            />
-
-            <Image
-                src="/elements/chat.svg"
-                alt="chat"
-                width={100}
-                height={100}
-                className="chat-element element"
-            />
         </section>
     );
 };
