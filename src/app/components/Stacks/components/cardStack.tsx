@@ -47,9 +47,9 @@ const CardStack = ({
     };
 
     return (
-        <Card className="soft-card mb-4 transition-all hover:-translate-y-1 hover:border-[var(--orange)]">
+        <Card className="soft-card mb-4 transition-all hover:-translate-y-1 hover:border-[var(--purple)]">
             <CardContent className="flex gap-4 px-3">
-                <div className="flex max-w-[50px] min-w-[50px] flex-auto items-center justify-center rounded-xl bg-[var(--sand)] text-[var(--orange)]">
+                <div className="flex max-w-[50px] min-w-[50px] flex-auto items-center justify-center rounded-xl bg-[var(--sand)] text-[var(--purple)]">
                     {stackImageIcon !== null ? (
                         <Image
                             src={stackImageIcon}
@@ -72,7 +72,7 @@ const CardStack = ({
                                     value={progressForLevel(
                                         stackLevel as LevelProps,
                                     )}
-                                    className={`bg-[var(--sand)] [&>div]:bg-[var(--orange)]`}
+                                    className={`bg-[var(--sand)] [&>div]:bg-[var(--purple)]`}
                                 />
                             )}
                             {nameLevel}

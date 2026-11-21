@@ -16,7 +16,7 @@ const Projects = async () => {
                     </h5>
                     <h1 className="section-title">
                         Trabalhos com{" "}
-                        <span className="text-[var(--orange)]">intenção.</span>
+                        <span className="text-[var(--purple)]">intenção.</span>
                     </h1>
                     <p className="mt-5 text-sm text-stone-300 sm:text-base">
                         Desenvolvidos com dedicação, clareza e atenção aos
@@ -47,7 +47,7 @@ const Projects = async () => {
                     <Link
                         href="https://github.com/giovannaarrais"
                         target="_blank"
-                        className="mx-auto flex w-max items-center justify-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm transition hover:border-[var(--orange)] hover:text-[var(--orange)]"
+                        className="mx-auto flex w-max items-center justify-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm transition hover:border-[var(--purple)] hover:text-[var(--purple)]"
                     >
                         Ver mais no
                         <Github size={18} />

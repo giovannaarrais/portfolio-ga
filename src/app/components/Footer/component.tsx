@@ -12,7 +12,7 @@ export default function Footer() {
                 <div>
                     <a
                         href="#inicio"
-                        className="font-semibold hover:text-[var(--orange)]"
+                        className="font-semibold hover:text-[var(--purple)]"
                     >
                         Voltar ao início
                     </a>

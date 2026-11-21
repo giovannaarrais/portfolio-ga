@@ -1,15 +1,14 @@
 import { InfosAboutMe } from "@/data/personalInfos/get";
-import { Code, Code2, Database, Sparkles, Star } from "lucide-react";
+import { ArrowUpRight, Code, Code2, Database, Star } from "lucide-react";
 import Container from "../Container/container";
 import {
     Card,
-    CardAction,
     CardContent,
     CardDescription,
-    CardFooter,
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
+import Image from "next/image";
 
 const About = async () => {
     const info = await InfosAboutMe();
@@ -42,56 +41,65 @@ const About = async () => {
     ];
 
     return (
-        <section className="text-center rounded-[4rem] mx-5 shadow-black" id="sobre">
-            <Container>
-                <div className="text-center">
-                    <h5 className="eyebrow mb-5 flex items-center justify-center gap-2">
-                        {" "}
-                        <Star size={16} /> Sobre mim
-                    </h5>
-                    <h1 className="section-title mx-auto max-w-3xl text-white">
-                        Prazer em{" "}
-                        <span className="text-[var(--orange)]">
-                            conhecê-lo!
-                        </span>
-                    </h1>
-                    <p className=" text-md mt-4 text-white/70">
-                        Tecnologias que utilizo para criar experiências web modernas e responsivas
-                    </p>
-                </div>
-                <article className="mt-12 flex flex-col justify-between gap-10 md:flex-row">
-                    <div className="flex-1 rounded-[1.5rem] bg-white p-7 text-start md:p-10">
+        <section className="about-section mx-5 rounded-[4rem]" id="sobre">
+            <Container classExtra="!py-18">
+                <div className="about-panel">
+                    <div className="about-copy">
+                        <h5 className="eyebrow mb-5 flex items-center gap-2">
+                            <Star size={16} /> Sobre mim
+                        </h5>
+                        <h1 className="about-title section-title max-w-3xl text-white lg:text-5xl!">
+                            Prazer em{" "}
+                            <span className="text-[var(--purple)]">
+                                conhecê-lo!
+                            </span>
+                        </h1>
                         <p
                             style={{ whiteSpace: "pre-line" }}
-                            className="text-muted-foreground leading-8"
+                            className="about-description"
                         >
                             {info?.aboutMe}
                         </p>
+                        <a className="about-link" href="#contato">
+                            Vamos conversar <ArrowUpRight size={16} />
+                        </a>
                     </div>
-                    <div className="flex flex-1 flex-col items-center gap-4 text-start">
-                        {stacks.map((stack) => (
-                            <Card
-                                className="soft-card flex w-full max-w-sm flex-row gap-3 text-left transition hover:-translate-y-1"
-                                key={stack.id}
-                            >
-                                <CardHeader className="flex-auto">
-                                    <span className="rounded-xl bg-[var(--sand)] p-2 text-[var(--orange)]">
-                                        {stack.icon}
-                                    </span>
-                                </CardHeader>
 
-                                <CardContent className="flex-auto">
-                                    <CardTitle className="mb-2">
-                                        {stack.name}
-                                    </CardTitle>
-                                    <CardDescription>
-                                        {stack.descricao}
-                                    </CardDescription>
-                                </CardContent>
-                            </Card>
-                        ))}
+                    <div className="about-technologies">
+                        <div className="about-divider" aria-hidden="true" />
+                        <div className="about-tech-heading">
+                            <Code2 size={18} />
+                            <span>Áreas de Atuação</span>
+                        </div>
+                        <div className="about-tech-list">
+                            {stacks.map((stack) => (
+                                <Card
+                                    className="about-tech-card"
+                                    key={stack.id}
+                                >
+                                    <CardHeader className="about-tech-icon">
+                                        {stack.icon}
+                                    </CardHeader>
+                                    <CardContent className="p-0">
+                                        <CardTitle>{stack.name}</CardTitle>
+                                        <CardDescription>
+                                            {stack.descricao}
+                                        </CardDescription>
+                                    </CardContent>
+                                </Card>
+                            ))}
+
+                            {/* <Image
+                                src="/backgrounds/ellipses-bg.svg"
+                                alt="Ellipses"
+                                width={400}
+                                height={620}
+                                priority
+                                className="absolute z-[-1] opacity-30"
+                            /> */}
+                        </div>
                     </div>
-                </article>
+                </div>
             </Container>
         </section>
     );

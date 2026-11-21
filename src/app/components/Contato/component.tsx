@@ -41,7 +41,7 @@ const Contato = async () => {
                     </h5>
                     <h1 className="section-title mx-auto max-w-4xl">
                         Vamos trabalhar{" "}
-                        <span className="text-[var(--orange)]"> juntos?</span>
+                        <span className="text-[var(--purple)]"> juntos?</span>
                     </h1>
 
                     <p className="text-muted-foreground mx-auto max-w-lg text-lg">
@@ -78,14 +78,14 @@ const Contato = async () => {
                         <div className="space-y-3">
                             <p className="flex items-center justify-center gap-2 text-center text-xs sm:text-sm">
                                 <Icons.MapPin
-                                    className="text-[var(--orange)]"
+                                    className="text-[var(--purple)]"
                                     size={18}
                                 />{" "}
                                 Brasil
                             </p>
                             <p className="flex items-center justify-center gap-2 text-xs sm:text-sm">
                                 <Icons.Clock
-                                    className="text-[var(--orange)]"
+                                    className="text-[var(--purple)]"
                                     size={18}
                                 />{" "}
                                 Disponível para oportunidades
@@ -94,7 +94,6 @@ const Contato = async () => {
                     </CardContent>
                 </Card>
             </Container>
-
         </section>
     );
 };

@@ -65,17 +65,17 @@ const Apresentacao = async () => {
                             priority
                             className="relative z-10 h-[96%] w-auto max-w-[96%] object-contain object-bottom drop-shadow-2xl"
                         />
-                        <div className="w-100 absolute z-10 pb-5">
-                            <div className="flex gap-5 justify-center transparent-glass-box">
+                        <div className="absolute z-10 w-100 pb-5">
+                            <div className="transparent-glass-box flex justify-center gap-5">
                                 <a
                                     href="#projetos"
-                                    className="orange-button  bottom-6 z-20 flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
+                                    className="purple-button bottom-6 z-20 flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold"
                                 >
                                     Projetos <ArrowDownRight size={16} />
                                 </a>
                                 <a
                                     href="#sobre"
-                                    className=" bottom-6 z-20 flex items-center gap-2 rounded-full px-4 py-2 text-sm text-white font-semibold"
+                                    className="bottom-6 z-20 flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white"
                                 >
                                     Conheça me
                                 </a>
@@ -92,7 +92,7 @@ const Apresentacao = async () => {
                     <div className="pointer-events-none absolute inset-x-0 top-[23%] z-20 text-center lg:top-[24%]">
                         <h1 className="section-title text-[clamp(2.8rem,6vw,6rem)]">
                             <span>{firstName} </span>
-                            <span className="text-[var(--orange)]">
+                            <span className="text-[var(--purple)]">
                                 {restName}
                             </span>
                             <br />

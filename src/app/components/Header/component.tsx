@@ -37,7 +37,7 @@ export default async function Header() {
                     <ButtonTheme />
                     <Link
                         href="#contato"
-                        className="rounded-full bg-[var(--orange)] px-4 py-2 text-xs font-bold text-white transition hover:bg-[var(--orange-deep)]"
+                        className="rounded-full bg-[var(--purple)] px-4 py-2 text-xs font-bold text-white transition hover:bg-[var(--purple-deep)]"
                     >
                         Vamos conversar
                     </Link>

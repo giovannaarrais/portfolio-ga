@@ -28,7 +28,7 @@ const Stacks = async () => {
                     </h5>
                     <h1 className="section-title mx-auto max-w-4xl">
                         Skills &{" "}
-                        <span className="text-[var(--orange)]">
+                        <span className="text-[var(--purple)]">
                             Ferramentas
                         </span>
                     </h1>

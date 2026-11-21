@@ -71,7 +71,7 @@ const CardProject = async ({
                         href={urlGithub}
                         target="_blank"
                         aria-label={`Código de ${title}`}
-                        className="text-stone-300 transition hover:text-[var(--orange)]"
+                        className="text-stone-300 transition hover:text-[var(--purple)]"
                     >
                         <Github size={19} />
                     </Link>
